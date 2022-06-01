@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/scrapbook",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
