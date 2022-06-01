@@ -1,0 +1,25 @@
+<div class="login-wrapper">
+    <div class="login-card">
+        <h2>Login</h2>
+        <form class="login-form">
+            <div class="textbox">
+                <input type="email" placeholder="Email Address">
+            </div>
+            
+            <div class="textbox">
+                <input type="password" placeholder="Password">
+            </div>
+            <div class="button-area">
+                <button class="login-button">
+                    <div class="!submitted">
+                        Login
+                    </div>
+                    <div *ngIf="submitted" class="submitted">
+                        spin
+                    </div>
+                </button>
+            </div>
+            
+        </form>
+    </div>
+</div>
