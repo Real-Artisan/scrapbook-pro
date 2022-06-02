@@ -7,6 +7,7 @@ import { environment } from 'src/environments/environment.prod';
   providedIn: 'root'
 })
 export class AuthService {
+  
   private headers = new HttpHeaders({
     'Content-Type': 'application/json',
     'Access-Contol-Allow-Origin': '*'});
@@ -14,6 +15,7 @@ export class AuthService {
 user:any;
 result:any;
 userInfo:any;
+
 
   constructor( 
     private http: HttpClient,
@@ -27,9 +29,10 @@ userInfo:any;
 
   public login(loginData: { email:string, password:string })
   {
-    return this.http.post(`${environment.apiUrl}/user/login`, loginData, { headers: this.headers}).subscribe((response) =>
+    return this.http.post(`${environment.apiUrl}/user/login`, loginData, { headers: this.headers, withCredentials: true }).subscribe((response) =>
     {
     this.result = response;
+    console.log(this.result);
     this.user = this.result["0"].data;
     this.userInfo = JSON.stringify(this.user);
     sessionStorage.setItem("userInfo", this.userInfo);
