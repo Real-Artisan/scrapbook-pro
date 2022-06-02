@@ -29,7 +29,7 @@ userInfo:any;
 
   public login(loginData: { email:string, password:string })
   {
-    return this.http.post(`${environment.apiUrl}/user/login`, loginData, { headers: this.headers, withCredentials: true }).subscribe((response) =>
+    return this.http.post(`${environment.apiUrl}/user/login`, loginData, { headers: this.headers }).subscribe((response) =>
     {
     this.result = response;
     console.log(this.result);
