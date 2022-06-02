@@ -1,0 +1,16 @@
+<div class="dashboard-wrapper">
+    <div *ngIf="userInfo" class="user-info">
+        <p>hello {{userInfo.first_name}}</p>
+    </div>
+    <div class="notes">
+        <div class="head">
+            Notes
+        </div>
+        <div class="mynotes">
+
+        </div>
+    </div>
+<button (click)="add()" class="add">
+        plus
+    </button>
+</div>

@@ -1,16 +1,16 @@
 <div class="login-wrapper">
     <div class="login-card">
         <h2>Login</h2>
-        <form class="login-form">
+        <form class="login-form" (ngSubmit)="login()">
             <div class="textbox">
-                <input type="email" placeholder="Email Address">
+                <input [formControl]="email" type="email" placeholder="Email Address">
             </div>
             
             <div class="textbox">
-                <input type="password" placeholder="Password">
+                <input [formControl]="password" type="password" placeholder="Password">
             </div>
             <div class="button-area">
-                <button class="login-button">
+                <button (click)="login()" class="login-button">
                     <div class="!submitted">
                         Login
                     </div>
@@ -25,7 +25,7 @@
             <div class="p">
                 Forgot Password
             </div>
-            <div class="s">
+            <div routerLink="/signup" class="s">
                 Sign-Up
             </div>
         </div>

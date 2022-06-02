@@ -1,0 +1,39 @@
+<div class="login-wrapper">
+    <div class="login-card">
+        <h2>Register</h2>
+        <form class="login-form" (ngSubmit)="register()">
+            <div class="textbox">
+                <input [formControl]="firstName" type="text" placeholder="First Name">
+            </div>
+            <div class="textbox">
+                <input [formControl]="lastName" type="text" placeholder="Last Name">
+            </div>
+            <div class="textbox">
+                <input [formControl]="email" type="email" placeholder="Email Address">
+            </div>
+            
+            <div class="textbox">
+                <input [formControl]="password" type="password" placeholder="Password">
+            </div>
+            <div class="textbox">
+                <input [formControl]="confirmPassword" type="password" placeholder="Confirm Password">
+            </div>
+            <div class="button-area">
+                <button (click)="register()" class="login-button">
+                    <div class="!submitted">
+                        Register
+                    </div>
+                    <div *ngIf="submitted" class="submitted">
+                        spin
+                    </div>
+                </button>
+            </div>
+            
+        </form>
+        
+        <div routerLink="/" class="s">
+                Login
+        </div>
+        
+    </div>
+</div>

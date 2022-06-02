@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'scrapbook';
+  add:boolean = !true;
+  
+  
+  closeAddTab()
+  {
+    this.add = !this.add
+  }
 }
