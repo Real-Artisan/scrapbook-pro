@@ -19,7 +19,7 @@ export class NotesService {
 
   public createNote(noteBody: { title:string, content:string})
   {
-    return this.http.post(`${environment.apiUrl}/note/`, noteBody, { headers:this.headers });
+    return this.http.post(`${environment.apiUrl}/note/`, noteBody, { headers:this.headers, withCredentials:true });
   }
 
 }

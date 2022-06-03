@@ -30,14 +30,9 @@ userInfo:any;
 
   public login(loginData: { email:string, password:string })
   {
-    return this.http.post(`${environment.apiUrl}/user/login`, loginData, { headers: this.headers }).subscribe((response) =>
+    return this.http.post(`${environment.apiUrl}/user/login/v2`, loginData, { headers: this.headers, withCredentials:true }).subscribe((response) =>
     {
     this.result = response;
-   // console.log(this.result);
-    console.log(this.result.headers);
-    this.user = this.result["0"].data;
-    this.userInfo = JSON.stringify(this.user);
-    //sessionStorage.setItem("userInfo", this.userInfo);
     this.router.navigate(["/dashboard"]);
     });
   }
