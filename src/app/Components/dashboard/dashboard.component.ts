@@ -18,6 +18,11 @@ storage:any;
     {
       this.router.navigate(["/login"]);
     }
+    this.info.isAuthenticated().subscribe((result) => 
+    {
+      console.log(result)
+    },
+     (error)=>{console.log(error)})
     this.storage = sessionStorage.getItem("userInfo");
     this.userInfo = JSON.parse(this.storage);
     

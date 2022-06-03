@@ -10,19 +10,13 @@ export class UserinfoService {
 headers = new HttpHeaders(
   {
     'Content-Type': 'application/json',
-    'Access-Contol-Allow-Origin': '*'
+    'Access-Contol-Allow-Origin': '*',
+    "access-control-expose-headers": "Set-Cookie"
   });
   constructor( private http: HttpClient ) { }
 public isAuthenticated()
 {
-  if(sessionStorage.getItem("userInfo"))
-  {
-    return true;
-  }
-  else
-  {
-    return false;
-  }
+  return this.http.get(`${environment.apiUrl}/user/`, {headers:this.headers});
 }
 
 

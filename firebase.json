@@ -1,13 +1,6 @@
 {
   "hosting": {
-    "target": "scrapbook",
     "public": "dist/scrapbook",
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
-    ],
     "ignore": [
       "firebase.json",
       "**/.*",

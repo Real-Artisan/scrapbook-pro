@@ -10,14 +10,16 @@ export class NotesService {
   private headers = new HttpHeaders(
     {
       'Content-Type': 'application/json',
-      'Access-Contol-Allow-Origin': '*'}
+      'Access-Contol-Allow-Origin': '*',
+      "access-control-expose-headers": "Set-Cookie",
+      "Access-Control-Allow-Credentials": "true" }
   );
 
   constructor(private http: HttpClient) { }
 
   public createNote(noteBody: { title:string, content:string})
   {
-    return this.http.post(`${environment.apiUrl}/note/`, noteBody, {headers:this.headers});
+    return this.http.post(`${environment.apiUrl}/note/`, noteBody, { headers:this.headers });
   }
 
 }

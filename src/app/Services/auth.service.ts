@@ -10,7 +10,8 @@ export class AuthService {
   
   private headers = new HttpHeaders({
     'Content-Type': 'application/json',
-    'Access-Contol-Allow-Origin': '*'});
+    'Access-Contol-Allow-Origin': '*',
+    "access-control-expose-headers": "Set-Cookie"});
     
 user:any;
 result:any;
@@ -32,10 +33,11 @@ userInfo:any;
     return this.http.post(`${environment.apiUrl}/user/login`, loginData, { headers: this.headers }).subscribe((response) =>
     {
     this.result = response;
-    console.log(this.result);
+   // console.log(this.result);
+    console.log(this.result.headers);
     this.user = this.result["0"].data;
     this.userInfo = JSON.stringify(this.user);
-    sessionStorage.setItem("userInfo", this.userInfo);
+    //sessionStorage.setItem("userInfo", this.userInfo);
     this.router.navigate(["/dashboard"]);
     });
   }

@@ -1,6 +1,6 @@
 <div class="add-wrapper">
     <div class="head">Add a new note</div>
-    <form  class="add-form" (ngSubmit)="addNewNote()">
+    <form  class="add-form">
         <div class="textbox">
             <input type="text" placeholder="Title" [formControl]="title">
         </div>
@@ -8,7 +8,7 @@
             <input type="text" placeholder="Your note goes here" [formControl]="content">
         </div>
         <div class="button-area">
-            <button class="add-note">
+            <button (click)="addNewNote()" class="add-note">
                 <div class="!submitted">
                     Publish
                 </div>
