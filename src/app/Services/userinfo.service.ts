@@ -11,12 +11,13 @@ headers = new HttpHeaders(
   {
     'Content-Type': 'application/json',
     'Access-Contol-Allow-Origin': '*',
-    "access-control-expose-headers": "Set-Cookie"
+    "access-control-expose-headers": "Set-Cookie",
+    'Access-Control-Allow-Credentials': 'true',
   });
   constructor( private http: HttpClient ) { }
 public isAuthenticated()
 {
-  return this.http.get(`${environment.apiUrl}/user/`, {headers:this.headers});
+  return this.http.get(`${environment.apiUrl}/user/`, {headers:this.headers, withCredentials:true}).pipe(map(result => result));
 }
 
 
