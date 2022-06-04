@@ -33,6 +33,7 @@ userInfo:any;
     return this.http.post(`${environment.apiUrl}/user/login/v2`, loginData, { headers: this.headers, withCredentials:true }).subscribe((response) =>
     {
     this.result = response;
+    sessionStorage.setItem('loggedIn', "true");
     this.router.navigate(["/dashboard"]);
     });
   }

@@ -37,4 +37,9 @@ export class NotesService {
     return this.http.put(`${environment.apiUrl}/note/`+id, noteContent, { headers:this.headers, withCredentials:true });
   }
 
+
+  public deleteCurrentNote(id:number)
+  {
+    return this.http.delete(`${environment.apiUrl}/note/`+id, {headers:this.headers, withCredentials:true});
+  }
 }

@@ -17,7 +17,7 @@ headers = new HttpHeaders(
   constructor( private http: HttpClient ) { }
 public isAuthenticated()
 {
-  return this.http.get(`${environment.apiUrl}/user/`, {headers:this.headers, withCredentials:true}).pipe(map(result => result));
+  return this.http.get(`${environment.apiUrl}/user/`, {headers:this.headers, withCredentials:true});
 }
 
 

@@ -13,8 +13,7 @@ export class ViewComponent implements OnInit {
 result:any;
 currentNote:any;
 submitted:boolean = false;
-stick:string = '';
-pick:string = '';
+
 constructor(private app: AppComponent,private note: NotesService, private router: Router) { }
 goBack()
 {
@@ -23,14 +22,21 @@ goBack()
 updateNote()
 {
   this.app.closeUpdateTab();
-  
+
 }
 
 
 
 deleteNote(id:number)
 {
-
+  this.note.deleteCurrentNote(id).subscribe((result) =>
+  {
+    this.router.navigate(["dashboard"])
+  },
+  (error) =>
+  {
+    console.log(error)
+  });
 }
 
 ngOnInit(): void {

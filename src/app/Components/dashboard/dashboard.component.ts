@@ -23,26 +23,19 @@ time:any;
     {
       this.result = response;
       this.singleNote = this.result.data['0'] 
-      this.time = Date.parse(this.singleNote.created);
-      console.log(this.time)
+      
     },
     (error) => 
     {
       console.log(error)
     })
-    if(!this.info.isAuthenticated())
-    {
-      this.router.navigate(["/login"]);
-    }
-    this.info.isAuthenticated().subscribe((result) => 
-    {
-      console.log(result)
-    },
-     (error)=>{console.log(error)})
-    this.storage = sessionStorage.getItem("userInfo");
-    this.userInfo = JSON.parse(this.storage);
     
     
+  }
+  logout()
+  {
+    sessionStorage.removeItem('loggedIn');
+    this.router.navigate(['login']);
   }
   add()
   {
