@@ -10,6 +10,8 @@ import { RegisterComponent } from './Components/register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { AddComponent } from './Components/add/add.component';
+import {MatIconModule} from '@angular/material/icon';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,11 +22,13 @@ import { AddComponent } from './Components/add/add.component';
   ],
   imports: [
     BrowserModule,
+    MatIconModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    
         
   ],
   providers: [],
