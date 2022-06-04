@@ -1,21 +1,26 @@
 <div class="login-wrapper">
     <div class="login-card">
-        <h2>Register</h2>
-        <form class="login-form" (ngSubmit)="register()">
+        <div class="h2">Register</div>
+        <form class="login-form" >
             <div class="textbox">
+                <mat-icon>perm_identity</mat-icon>
                 <input [formControl]="firstName" type="text" placeholder="First Name">
             </div>
             <div class="textbox">
+                <mat-icon>perm_identity</mat-icon>
                 <input [formControl]="lastName" type="text" placeholder="Last Name">
             </div>
             <div class="textbox">
+                <mat-icon> mail_outline</mat-icon>
                 <input [formControl]="email" type="email" placeholder="Email Address">
             </div>
             
             <div class="textbox">
+                <mat-icon>lock_open</mat-icon>
                 <input [formControl]="password" type="password" placeholder="Password">
             </div>
             <div class="textbox">
+                <mat-icon>lock_open</mat-icon>
                 <input [formControl]="confirmPassword" type="password" placeholder="Confirm Password">
             </div>
             <div class="button-area">
@@ -24,16 +29,20 @@
                         Register
                     </div>
                     <div *ngIf="submitted" class="submitted">
-                        spin
+                        
                     </div>
                 </button>
             </div>
             
         </form>
         
-        <div routerLink="/" class="s">
-                Login
-        </div>
+        
         
     </div>
+    <div class="options">
+        <div class="p">
+            Already have an account? <span routerLink="/">Login</span>
+        </div>
+        
+    </div>    
 </div>

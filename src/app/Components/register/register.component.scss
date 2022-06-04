@@ -1,0 +1,119 @@
+.login-wrapper
+{   font-family: 'Raleway', sans-serif;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-content: center;
+    background-color: #e6eeff;
+    .login-card
+    {
+        background-color: #fff;
+        min-height: max-content;
+        width: 90vw;
+        border-radius: 14px;
+        .h2
+        {
+            text-align: center;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            font-size: 15pt;
+            font-weight: bold;
+            color: #324567;
+        }
+        .message
+        {
+            text-align: center;
+            font-size: smaller;
+        }
+        form
+        {
+            .textbox
+            {
+                display: block;
+                margin: auto;
+                margin-top: 20px;
+                align-items: center;
+                display: flex;
+                width: 90%;
+                border: 1px solid lightgray;
+                height: 35px;
+                border-radius: 6px;
+                input
+                {
+                    outline: none;
+                    background: #fff;
+                    width: 100%;
+                    border: none;
+                    height: 30px;
+                }
+                mat-icon 
+                {
+                    color: #2662ff;
+                    font-size: 11pt;
+                    margin-left: 6px;
+                    margin-top: 6px;
+                }
+            }
+            .button-area
+            {
+                button 
+                {
+                    width: 90%;
+                    display: block;
+                    margin: auto;
+                    border: 1px solid #2662ff;
+                    background-color: #2662ff;
+                    color: #fff;
+                    height: 35px;
+                    border-radius: 6px;
+                    margin-top: 20px;
+                    margin-bottom: 35px;
+                    cursor: pointer;
+                    font-family: 'Raleway', sans-serif;
+                    display: flex;
+                    flex-direction: row-reverse;
+                    align-items: center;
+                    justify-content: center;
+                    .not-submitted
+                    {
+                        margin-left: 2.5px;
+                    }
+                    .submitted
+                    {
+                       margin-right: 2.5px;
+                        height: 11px;
+                        width:11px;
+                        border-radius: 100%;
+                        border: 3.5px solid #fff;
+                        border-top-color: lightgray;
+                        background: transparent;
+                        animation: spin 1s linear 0s infinite  none;
+                        
+                        @keyframes spin {
+                            0% { transform: rotate(0deg); }
+                            100% {transform: rotate(360deg);}
+                            
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    .options
+    {
+        
+        text-align: center;
+        margin-top: 10px;
+        .p 
+        {
+            font-size: smaller;
+            span 
+            {
+                color: #2662ff;
+                cursor: pointer;
+            }
+        }
+    }
+
+}
