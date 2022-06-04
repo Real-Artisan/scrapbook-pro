@@ -1,0 +1,54 @@
+.dashboard-wrapper
+{
+    height: 100vh;
+    width: 100vw;
+    background: #e6eeff;
+    font-family: 'Raleway', sans-serif;
+    .notes
+    {
+        .head{
+            font-size: 20pt;
+            padding-top: 15px;
+            margin-left: 15px;
+            font-weight: 900;
+        }
+        .noNotes
+        {
+            text-align: center;
+            padding-top: 20px;
+        }
+        .mynote
+        {
+            display: block;
+            margin: auto;
+            width: 80%;
+            margin-top: 20px;
+            height: 85px;
+            border-radius: 13px;
+            background: #2662ff;
+            cursor: pointer;
+            color: #fff;
+            .title
+            {
+                margin: 0px 0 0 10px;
+                padding-top: 10px;
+                font-weight: 600;
+            }
+            .time
+            {
+                float: right;
+                margin-right: 15px;
+                margin-top: 25px;
+            }
+        }
+    }
+    mat-icon
+    {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        margin: 0 30px 30px 0;
+        font-size: 30pt;
+        color: #2662ff;
+    }
+}

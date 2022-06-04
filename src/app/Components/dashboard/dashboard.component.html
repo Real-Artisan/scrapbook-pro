@@ -1,16 +1,23 @@
 <div class="dashboard-wrapper">
-    <div *ngIf="userInfo" class="user-info">
-        <p>hello {{userInfo.first_name}}</p>
-    </div>
+    
     <div class="notes">
         <div class="head">
             Notes
         </div>
+        <div class="noNotes" *ngIf="!singleNote">
+            You have no notes yet!
+        </div>
         <div class="mynotes">
 
         </div>
+        <div *ngIf="singleNote" class="mynote">
+            <div class="title">
+                {{singleNote.title}}
+            </div>
+            <div class="time">
+                {{singleNote.created | date: 'shortTime'}}
+            </div>
+        </div>
     </div>
-<button (click)="add()" class="add">
-        plus
-    </button>
+    <mat-icon (click)="add()" >add_circle</mat-icon>
 </div>

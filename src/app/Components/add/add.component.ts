@@ -14,7 +14,10 @@ submitted:boolean = false;
   constructor( private notes: NotesService, private app:AppComponent ) { }
   title = new FormControl("", Validators.required);
   content = new FormControl("", Validators.required);
-
+  closeTab()
+  {
+    this.app.closeAddTab();
+  }
   addNewNote()
   {
     this.submitted = true;

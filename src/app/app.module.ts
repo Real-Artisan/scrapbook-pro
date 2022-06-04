@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { AddComponent } from './Components/add/add.component';
 import {MatIconModule} from '@angular/material/icon';
+import { ViewComponent } from './Components/view/view.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {MatIconModule} from '@angular/material/icon';
     LoginComponent,
     RegisterComponent,
     DashboardComponent,
-    AddComponent
+    AddComponent,
+    ViewComponent
   ],
   imports: [
     BrowserModule,

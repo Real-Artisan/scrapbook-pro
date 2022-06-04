@@ -22,4 +22,9 @@ export class NotesService {
     return this.http.post(`${environment.apiUrl}/note/`, noteBody, { headers:this.headers, withCredentials:true });
   }
 
+  public getMyNotes()
+  {
+    return this.http.get(`${environment.apiUrl}/note/`, {headers:this.headers, withCredentials:true});
+  }
+
 }
