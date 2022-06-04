@@ -48,4 +48,12 @@ time:any;
   {
     this.app.closeAddTab();
   }
+
+  viewNote(id:number)
+  {
+    
+    localStorage.setItem("noteId", JSON.stringify(id));
+    this.router.navigate(['/view']);
+  }
+
 }

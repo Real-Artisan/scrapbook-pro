@@ -10,12 +10,12 @@
         <div class="mynotes">
 
         </div>
-        <div *ngIf="singleNote" class="mynote">
+        <div (click)="viewNote(singleNote.id)" *ngIf="singleNote" class="mynote">
             <div class="title">
                 {{singleNote.title}}
             </div>
             <div class="time">
-                {{singleNote.created | date: 'shortTime'}}
+                {{singleNote.created | date: 'mediumDate'}}
             </div>
         </div>
     </div>
