@@ -1,1 +1,19 @@
-<p>view works!</p>
+<div class="view-wrapper">
+    <div class="head">
+        <mat-icon (click)="goBack()">keyboard_arrow_left</mat-icon>
+        <button (click)="updateNote()" class="save">
+        
+                <mat-icon>create</mat-icon>
+            
+        </button>  
+    </div>
+    <form *ngIf="currentNote" class="update-form">
+        <div class="textbox">
+            <textarea readonly  class="title" type="text"  >{{currentNote.title}}</textarea>
+            <textarea readonly  class="content" type="text" >{{currentNote.content}}</textarea>
+        </div>
+    </form>
+    <div *ngIf="currentNote" class="destroy">
+        <mat-icon (click)="deleteNote(currentNote.id)" >delete</mat-icon>
+    </div>
+</div>

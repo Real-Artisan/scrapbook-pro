@@ -29,7 +29,12 @@ export class NotesService {
 
   public showCurrentNote(id:number)
   {
-    return this.http.get(`${environment.apiUrl}/note/`+id);
+    return this.http.get(`${environment.apiUrl}/note/`+id, { headers:this.headers, withCredentials:true});
+  }
+
+  public updateCurrentNote(id:number, noteContent:{ title:string, content:string})
+  {
+    return this.http.put(`${environment.apiUrl}/note/`+id, noteContent, { headers:this.headers, withCredentials:true });
   }
 
 }

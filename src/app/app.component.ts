@@ -8,10 +8,16 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'scrapbook';
   add:boolean = !true;
+  update:boolean = !true;
   
   
   closeAddTab()
   {
-    this.add = !this.add
+    this.add = !this.add;
+  }
+  closeUpdateTab()
+  {
+    
+    this.update = !this.update;
   }
 }

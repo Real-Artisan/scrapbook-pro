@@ -12,6 +12,7 @@ import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { AddComponent } from './Components/add/add.component';
 import {MatIconModule} from '@angular/material/icon';
 import { ViewComponent } from './Components/view/view.component';
+import { UpdateComponent } from './Components/update/update.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ViewComponent } from './Components/view/view.component';
     RegisterComponent,
     DashboardComponent,
     AddComponent,
-    ViewComponent
+    ViewComponent,
+    UpdateComponent
   ],
   imports: [
     BrowserModule,
