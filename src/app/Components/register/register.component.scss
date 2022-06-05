@@ -1,3 +1,6 @@
+
+
+
 .login-wrapper
 {   font-family: 'Raleway', sans-serif;
     width: 100vw;
@@ -27,6 +30,19 @@
         }
         form
         {
+            
+            mat-icon 
+            {
+                color: #2662ff;
+                font-size: 11pt;
+                margin-left: 6px;
+                margin-top: 6px;
+            }
+            mat-form-field{
+                display: block;
+                width: 90%;
+                margin: auto;
+            }
             .textbox
             {
                 display: block;
@@ -53,6 +69,11 @@
                     margin-left: 6px;
                     margin-top: 6px;
                 }
+            }
+            mat-hint{
+                color: red;
+                margin-left: 5%;
+                font-weight: 800;
             }
             .button-area
             {
@@ -115,12 +136,5 @@
             }
         }
     }
-
-}
-@media(min-width:750px)
-{
-    .login-card
-    {
-        width: 24vw;
-    }
+    
 }

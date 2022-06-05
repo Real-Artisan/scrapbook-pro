@@ -13,7 +13,8 @@ import { AddComponent } from './Components/add/add.component';
 import {MatIconModule} from '@angular/material/icon';
 import { ViewComponent } from './Components/view/view.component';
 import { UpdateComponent } from './Components/update/update.component';
-
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +33,8 @@ import { UpdateComponent } from './Components/update/update.component';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    MatFormFieldModule,
+    MatInputModule,
     
         
   ],

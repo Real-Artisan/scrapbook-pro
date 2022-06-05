@@ -8,7 +8,7 @@
     .login-card
     {
         background-color: #fff;
-        height: 37vh;
+        min-height: max-content;
         width: 90vw;
         border-radius: 14px;
         .h2
@@ -27,32 +27,22 @@
         }
         form
         {
-            .textbox
-            {
+            mat-form-field{
                 display: block;
-                margin: auto;
-                margin-top: 20px;
-                align-items: center;
-                display: flex;
                 width: 90%;
-                border: 1px solid lightgray;
-                height: 35px;
-                border-radius: 6px;
-                input
-                {
-                    outline: none;
-                    background: #fff;
-                    width: 100%;
-                    border: none;
-                    height: 30px;
-                }
-                mat-icon 
-                {
-                    color: #2662ff;
-                    font-size: 11pt;
-                    margin-left: 6px;
-                    margin-top: 6px;
-                }
+                margin: auto;
+            }
+            mat-icon 
+            {
+                color: #2662ff;
+                font-size: 11pt;
+                margin-left: 6px;
+                margin-top: 6px;
+            }
+            mat-hint{
+                color: red;
+                margin-left: 5%;
+                font-weight: 800;
             }
             .button-area
             {
@@ -73,6 +63,7 @@
                     flex-direction: row-reverse;
                     align-items: center;
                     justify-content: center;
+                    margin-bottom: 20px;
                     .not-submitted
                     {
                         margin-left: 2.5px;

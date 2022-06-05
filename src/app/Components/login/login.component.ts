@@ -12,6 +12,8 @@ import { UserinfoService } from 'src/app/Services/userinfo.service';
 })
 export class LoginComponent implements OnInit {
 submitted:boolean = false;
+errorMessage = ""
+error:any;
   constructor( private auth: AuthService, private router: Router, private info: UserinfoService ) { }
 email = new FormControl("", Validators.required);
 password = new FormControl("", Validators.required);
@@ -26,7 +28,19 @@ login()
       email:this.email.value,
       password:this.password.value,
     }
-  );
+  ).subscribe((response) =>
+  {
+  this.result = response;
+  sessionStorage.setItem('loggedIn', "true");
+  this.router.navigate(["/dashboard"]);
+  },
+  (error) =>
+  {
+    this.submitted = false;
+    this.error = error;
+    this.errorMessage = this.error.error.message
+
+  });
 }
 
   ngOnInit(): void {

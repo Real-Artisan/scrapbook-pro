@@ -3,15 +3,24 @@
         <div class="h2">Login</div>
         <div class="message">Enter your credentials to access your notes</div>
         <form class="login-form" >
-            <div class="textbox">
-                <mat-icon> email</mat-icon>
-                <input [formControl]="email" type="email" placeholder="Enter Your Email Address">
-            </div>
             
-            <div class="textbox">
-                <mat-icon>lock</mat-icon>
-                <input [formControl]="password" type="password" placeholder=" Enter Your Password">
-            </div>
+                <mat-form-field appearance="outline">
+                    <mat-label>Email Address</mat-label>
+                    <input matInput [formControl]="email" type="email" placeholder="Enter Your Email Address">
+                    <mat-icon matSuffix> email</mat-icon>
+                    
+                </mat-form-field>
+                
+                <mat-form-field appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input matInput [formControl]="password" type="password" placeholder="Enter Your Password">
+                    <mat-icon matSuffix>lock</mat-icon>
+                    
+                    
+                </mat-form-field>
+                
+                <mat-hint *ngIf="errorMessage">{{errorMessage}}</mat-hint>
+            
             <div class="button-area">
                 <button (click)="login()" class="login-button">
                     <div class="not-submitted">

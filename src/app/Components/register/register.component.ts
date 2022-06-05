@@ -11,6 +11,9 @@ import { AuthService } from 'src/app/Services/auth.service';
 })
 export class RegisterComponent implements OnInit {
 submitted:boolean = false;
+errorMessage = ""
+error:any;
+pass ="";
   constructor( private auth: AuthService, private router: Router ) { }
 firstName = new FormControl("", Validators.required);
 lastName = new FormControl("", Validators.required);
@@ -25,6 +28,7 @@ confirmPassword = new FormControl("", Validators.required);
     if(this.password.value !== this.confirmPassword.value)
     {
       this.submitted = false;
+      this.pass = "Passwords Don't Match"
       return;
     }
     else
@@ -46,7 +50,8 @@ confirmPassword = new FormControl("", Validators.required);
       (error) =>
       {
         this.submitted = false;
-        console.log(error);
+        this.error = error;
+        this.errorMessage = this.error.error.message;
       });
     }
 
