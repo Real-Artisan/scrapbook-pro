@@ -1,14 +1,13 @@
 <div class="view-wrapper">
     <div class="head">
         <mat-icon (click)="goBack()">keyboard_arrow_left</mat-icon>
-        <button *ngIf="currentNote" (click)="updateNote(currentNote.id)" class="save">
         
-            <div *ngif="submitted" class="submitted"></div>
-            <div  class="submitted">
-                Update
-            </div>
-            
-        </button>  
+        
+            <button  (click)="updateNote(currentNote.id)" class="save">
+                    Update              
+            </button>  
+
+        
     </div>
     <form *ngIf="currentNote" class="update-form">
         <div class="textbox">
