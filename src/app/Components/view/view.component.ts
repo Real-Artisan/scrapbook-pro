@@ -35,22 +35,22 @@ deleteNote(id:number)
 {
   this.note.deleteCurrentNote(id).subscribe((result) =>
   {
-    this.router.navigate(["dashboard"])
+    this.router.navigate(["dashboard"]);
   },
   (error) =>
   {
-    console.log(error)
+    console.log(error);
   });
 }
 changeMe(event:any)
 {
   
-  localStorage.setItem('title', (event as HTMLInputElement).value)
+  localStorage.setItem('title', (event as HTMLInputElement).value);
 }
 changeTwo(event:any)
 {
   
-  localStorage.setItem('content', (event as HTMLInputElement).value)
+  localStorage.setItem('content', (event as HTMLInputElement).value);
 }
 
 ngOnInit(): void {
@@ -60,10 +60,10 @@ ngOnInit(): void {
     {
       this.result = result;
       this.currentNote = this.result.data;
-      this.currentTitle = this.currentNote.title
-      this.currentContent = this.currentNote.content
+      this.currentTitle = this.currentNote.title;
+      this.currentContent = this.currentNote.content;
       
-      localStorage.setItem('title', this.currentTitle)
+      localStorage.setItem('title', this.currentTitle);
       localStorage.setItem('content', this.currentContent);
       
     },
