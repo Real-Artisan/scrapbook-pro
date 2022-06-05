@@ -16,13 +16,20 @@ storage:any;
 singleNote:any;
 result:any;
 time:any;
+multiNotes:any;
   constructor(private note: NotesService, private info: UserinfoService, private router: Router, private app: AppComponent ) {  }
 
   ngOnInit(): void {
     this.note.getMyNotes().subscribe((response) => 
     {
       this.result = response;
-      this.singleNote = this.result.data['0'] 
+      if(this.result.data.length > 1){
+        this.multiNotes = this.result.data
+      }else{
+        this.singleNote = this.result.data['0'] 
+
+      }
+      
       
     },
     (error) => 

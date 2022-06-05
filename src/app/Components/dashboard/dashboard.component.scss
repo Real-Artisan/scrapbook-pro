@@ -6,6 +6,40 @@
     font-family: 'Raleway', sans-serif;
     .notes
     {
+        .mynotes{
+            .title
+            {
+                margin: 0px 0 0 10px;
+                padding-top: 10px;
+                font-weight: 600;
+            }
+            .time
+            {
+                float: right;
+                margin-right: 15px;
+                margin-top: 25px;
+            }
+
+        }
+        .column{
+            float: left;
+            width: 40%;
+            border-radius: 13px;
+            background: #2662ff;
+            cursor: pointer;
+            color: #fff;   
+            margin-top: 20px;
+            margin-left: 5.0%;
+            margin-right: 5%;
+        }
+        .w-100{
+            width: 100%;
+        }
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
         .head{
             font-size: 20pt;
             padding-top: 15px;
@@ -50,15 +84,22 @@
         margin: 0 30px 30px 0;
         font-size: 30pt;
         color: #2662ff;
+        cursor: pointer;
     }
     .logout
     {
         position: absolute;
         bottom: 0;
-        margin-bottom: 10px;
+        left: 0;
+        right: 0;
         font-weight: 900;
         text-align: center;
-        width: 100%;
+        width: 60px;
+        display: block;
+        margin-bottom: 10px;
+        margin-left: auto;
+        margin-right: auto;
+
         color: #2662ff;
         cursor: pointer;
         

@@ -26,8 +26,8 @@ submitted:boolean = false;
     {
       this.submitted = false;
       this.results = response;
-      console.log(this.results);
       this.app.closeAddTab();
+      window.location.reload();
     },
     (error) =>
     {

@@ -46,12 +46,13 @@
                 border: none;
                 background: transparent;
                 width: 94%;
-                height: 60px;
+                min-height: max-content;
                 resize: none;
                 display: block;
                 margin: auto;
                 margin-top: 30px;
                 font-size: 24pt;
+                overflow-y: none;
                 font-family: 'Raleway', sans-serif;
             }
             .title::placeholder
@@ -59,6 +60,12 @@
                 font-size: 24pt;
                 font-weight: 900;
                 font-family: 'Raleway', sans-serif;
+            }
+            .time
+            {
+                display: block;
+                width: 94%;
+                margin: auto;
             }
             .content
             {

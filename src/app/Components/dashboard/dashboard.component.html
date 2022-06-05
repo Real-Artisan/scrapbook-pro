@@ -4,11 +4,15 @@
         <div class="head">
             Notes
         </div>
-        <div class="noNotes" *ngIf="!singleNote">
+        <div class="noNotes" *ngIf="!singleNote && !multiNotes">
             You have no notes yet!
         </div>
-        <div class="mynotes">
-
+        <div *ngIf="multiNotes" class="mynotes row">
+           <div (click)="viewNote(singleNote.id)"  *ngFor="let singleNote of multiNotes" class=" column">
+                <div class="title">{{singleNote.title}}</div>
+                <div class="time">{{singleNote.created | date }}</div>
+           </div> 
+           <div class="w-100"></div>
         </div>
         <div (click)="viewNote(singleNote.id)" *ngIf="singleNote" class="mynote">
             <div class="title">

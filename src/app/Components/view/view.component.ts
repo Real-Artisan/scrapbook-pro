@@ -13,16 +13,20 @@ export class ViewComponent implements OnInit {
 result:any;
 currentNote:any;
 submitted:boolean = false;
-
+currentContent:any;
+currentTitle:any;
 constructor(private app: AppComponent,private note: NotesService, private router: Router) { }
 goBack()
 {
   this.router.navigate(['/dashboard']);
 }
-updateNote()
+updateNote(id:number)
 {
-  this.app.closeUpdateTab();
-
+  this.note.updateCurrentNote(id, { title:localStorage.getItem('title')!, content:localStorage.getItem('content')!}).subscribe
+  ((result) =>
+  {
+    window.location.reload();
+  });
 }
 
 
@@ -38,6 +42,16 @@ deleteNote(id:number)
     console.log(error)
   });
 }
+changeMe(event:any)
+{
+  
+  localStorage.setItem('title', (event as HTMLInputElement).value)
+}
+changeTwo(event:any)
+{
+  
+  localStorage.setItem('content', (event as HTMLInputElement).value)
+}
 
 ngOnInit(): void {
 
@@ -46,7 +60,11 @@ ngOnInit(): void {
     {
       this.result = result;
       this.currentNote = this.result.data;
-      console.log(this.currentNote)
+      this.currentTitle = this.currentNote.title
+      this.currentContent = this.currentNote.content
+      
+      localStorage.setItem('title', this.currentTitle)
+      localStorage.setItem('content', this.currentContent);
       
     },
     (error) => 

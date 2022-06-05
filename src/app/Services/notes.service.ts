@@ -27,7 +27,7 @@ export class NotesService {
     return this.http.get(`${environment.apiUrl}/note/`, {headers:this.headers, withCredentials:true});
   }
 
-  public showCurrentNote(id:number)
+  public showCurrentNote(id:any)
   {
     return this.http.get(`${environment.apiUrl}/note/`+id, { headers:this.headers, withCredentials:true});
   }
@@ -42,4 +42,6 @@ export class NotesService {
   {
     return this.http.delete(`${environment.apiUrl}/note/`+id, {headers:this.headers, withCredentials:true});
   }
+  
+ 
 }

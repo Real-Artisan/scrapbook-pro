@@ -1,16 +1,19 @@
 <div class="view-wrapper">
     <div class="head">
         <mat-icon (click)="goBack()">keyboard_arrow_left</mat-icon>
-        <button (click)="updateNote()" class="save">
+        <button *ngIf="currentNote" (click)="updateNote(currentNote.id)" class="save">
         
-                <mat-icon>create</mat-icon>
+                Update
             
         </button>  
     </div>
     <form *ngIf="currentNote" class="update-form">
         <div class="textbox">
-            <textarea readonly  class="title" type="text"  >{{currentNote.title}}</textarea>
-            <textarea readonly  class="content" type="text" >{{currentNote.content}}</textarea>
+            <textarea (input)="changeMe($event.target)"  class="title" type="text"  >{{currentNote.title}}</textarea>
+            <div class="time">
+                {{currentNote.created | date}}
+            </div>
+            <textarea (input)="changeTwo($event.target)"  class="content" type="text" >{{currentNote.content}}</textarea>
         </div>
     </form>
     <div *ngIf="currentNote" class="destroy">
